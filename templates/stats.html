@@ -10,7 +10,7 @@
     </tr>
 
 
-    {% for row in chekins %}
+    {% for row in checkin %}
     <tr>
         <td>{{ row[3] }}</td>
         <td>{{ row[1] }}</td>
@@ -19,3 +19,8 @@
     {% endfor %}
 
 </table>
+
+<h2>Статы</h2>
+<p>HP:{{ stats.hp }}</p>
+<p>Ловкость:{{ stats.agility }}</p>
+<p>Мана:{{ stats.mana }}</p>

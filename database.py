@@ -4,7 +4,7 @@ def init_db():
     conn = sqlite3.connect("game.db")
     cursor = conn.cursor()
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS cheсkins(
+        CREATE TABLE IF NOT EXISTS checkins(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             weight REAL,
             sleep REAL,
@@ -14,11 +14,11 @@ def init_db():
     conn.commit()
     conn.close()
 
-def save_cheсkin(weight, sleep):
+def save_checkin(weight, sleep):
     conn = sqlite3.connect("game.db")
     cursor = conn.cursor()
     cursor.execute(
-        "INSERT INTO cheсkins (weight, sleep, date) VALUES (?, ?, date('now'))",
+        "INSERT INTO checkins (weight, sleep, date) VALUES (?, ?, date('now'))",
         (weight, sleep)
     )     
     conn.commit()
@@ -26,6 +26,6 @@ def save_cheсkin(weight, sleep):
 
 def get_checkins():
     conn=sqlite3.connect('game.db')
-    rows = conn.execute('SELECT * FROM chekins').fetchall()
+    rows = conn.execute('SELECT * FROM checkins').fetchall()
     conn.close()
     return rows
