@@ -13,6 +13,11 @@ def cheсkin():
     if request.method == "POST":
         weight = request.form["weight"]
         sleep = request.form["sleep"]
+        try:
+            float(weight)
+            float(sleep)
+        except:
+            return render_template("checkin.html", error="Ошибка, введите число")
         save_cheсkin(weight,sleep)
         return redirect("/stats")
     return render_template("cheсkin.html")
