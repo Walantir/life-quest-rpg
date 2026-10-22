@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>Life Quest RPG</h1>
+
+<table>
+    <tr>
+        <th>Дата</th>
+        <th>Вес</th>
+        <th>Сон</th>
+    </tr>
+
+
+    {% for row in chekins %}
+    <tr>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
