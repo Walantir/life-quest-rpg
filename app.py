@@ -26,6 +26,8 @@ def checkin():
 @app.route("/stats")
 def stats():
     rows = get_checkins()
+    if not rows:
+        return render_template("stats.html", checkins=rows, stats=None)
     last = rows[-1]
     game_stats = calculate_stats(last[1], last[2])
     return render_template("stats.html", checkin=rows, stats=game_stats)

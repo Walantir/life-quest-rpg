@@ -20,7 +20,9 @@
 
 </table>
 
+{% if stats %}
 <h2>Статы</h2>
 <p>HP:{{ stats.hp }}</p>
 <p>Ловкость:{{ stats.agility }}</p>
 <p>Мана:{{ stats.mana }}</p>
+{% endif %}
